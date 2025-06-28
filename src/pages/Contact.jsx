@@ -3,7 +3,7 @@ import React from 'react';
 const Contact = () => {
   return (
     <div className="min-h-screen  flex items-center justify-center px-4 py-10">
-      <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl shadow-2xl p-10 w-full max-w-5xl">
+      <div className="backdrop-blur-md bg-[#FDF2F8] border border-white/20 rounded-2xl shadow-2xl p-10 w-full max-w-5xl">
         <h2 className="text-4xl font-bold text-black text-center mb-10">Get in Touch with <span className="text-red-500">Dhaage</span></h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -34,7 +34,7 @@ const Contact = () => {
               <label className="block text-black mb-1">Your Message</label>
               <textarea rows="4" placeholder="Type your message..." className="w-full px-4 py-2 border-black bg-white/60 border  text-black rounded-xl placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
             </div>
-            <button type="submit" className="w-full bg-gradient-to-r from-red-500 to-purple-500 text-white font-semibold py-2 rounded-xl hover:opacity-90 transition-all duration-300">
+            <button type="submit" className="w-full bg-red-500 text-white font-semibold py-2 rounded-xl hover:opacity-90 transition-all duration-300">
               Send Message 🚀
             </button>
           </form>

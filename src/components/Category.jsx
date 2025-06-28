@@ -44,7 +44,7 @@ const Category = () => {
             <button
               key={index}
               onClick={() => setSelectedCategory(prev => (prev === item ? null : item))}
-              className={`uppercase bg-gradient-to-r from-red-500 to-purple-500 px-3 py-1 rounded-md cursor-pointer ${
+              className={`uppercase bg-red-500 px-3 py-1 rounded-md cursor-pointer ${
                 selectedCategory === item ? 'ring-2 ring-white' : ''
               }`}
             >
