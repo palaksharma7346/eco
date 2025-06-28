@@ -47,12 +47,12 @@ const Carousel = () => {
     <div>
        <Slider {...settings}>{
         data?.slice(0,7)?.map((product)=>{
-          return <div key = {product.id} className='bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] -z-10'>
+          return <div key = {product.id} className=' -z-10'>
             <div className='flex flex-col  gap-10 justify-center h-[500px] items-center md:my-0 my-20 px-4 md:flex-row'>
               <div className='md:space-y-6 space-y-3'>
                 <h3 className='text-red-500 text-2xl font-semibold font-sans text-sm'>Because every thread tells a story</h3>
-                <h1 className='md:text-4xl text-xl font-bold uppercase line-clamp-3 md:w-[500px] text-white'>{product.title}</h1>
-                <p className='md:w-[500px] line-clamp-3 text-gray-400 pr-7'>{product.description}</p>
+                <h1 className='md:text-4xl text-xl font-bold uppercase line-clamp-3 md:w-[500px] text-black'>{product.title}</h1>
+                <p className='md:w-[500px] line-clamp-3 text-gray-700 pr-7'>{product.description}</p>
                 <button className='bg-gradient-to-r from-red-500 to-purple-500 text-white px-3 py-2 rounded-md cursor-pointer mt-2' onClick={()=>navigate(`/products/${product.id}`)}>shop now</button>
               </div>
               <div>

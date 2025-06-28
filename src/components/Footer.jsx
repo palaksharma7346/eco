@@ -5,13 +5,13 @@ import { FaFacebook, FaInstagram, FaPinterest, FaTwitterSquare } from 'react-ico
 
 const Footer = () => {
   return (
-    <footer className='bg-pink-900 text-gray-200 py-10'>
+    <footer className='bg-black text-gray-200 py-10'>
       <div className='max-w-7xl mx-auto px-4 md:flex md:justify-between'>
         {/*  info */}
         <div className='mb-6 md:mb-0'>
             <Link to='/'>
               {/* <img src={Logo} alt="" className='w-32'/> */}
-              <span className='text-red-500 text-2xl font-bold'>D</span><span className='text-black text-2xl font-bold'>haage</span>
+              <span className='text-red-500 text-2xl font-bold'>D</span><span className='text-white text-2xl font-bold'>haage</span>
             </Link>
             <p className='mt-2 text-sm'>Powering Your World with the Best in Fashion.</p>
             <p className='mt-2 text-sm'>123, Himachal Pradesh,India</p>
