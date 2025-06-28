@@ -1,12 +1,18 @@
-# React + Vite
+# E-Commerce Website Frontend
+This is a fully responsive frontend for an e-commerce website built using *React.js and *Tailwind CSS. It features product listings, a shopping cart interface, and user authentication using **Clerk. The UI is enhanced with **React Slick* for smooth product carousels, and *Context API* is used for global state management.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Features
+-  Clean, responsive UI built with Tailwind CSS
+-  Product listing with dynamic rendering
+-  Shopping cart interface with add/remove functionality
+-  User authentication using Clerk (login, signup)
+-  Global state management using React Context API
+-  Product carousel using React Slick
+-  Mobile-first design with full responsiveness
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Tech Stack
+- *Frontend*: React.js, Tailwind CSS
+- *State Management*: React Context API
+- *Authentication*: Clerk
+- *UI Enhancements*: React Slick
+- *Version Control*: Git, GitHub
