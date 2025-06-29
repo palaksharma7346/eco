@@ -12,7 +12,7 @@ import { IoCartOutline } from "react-icons/io5";
 import {CgClose} from 'react-icons/cg'
 import { useCart } from "../context/cartContext";
 import{ HiMenuAlt1,HiMenuAlt3} from 'react-icons/hi'
-import ResponsiveMenu from "./ResponsiveMenu ";
+import ResponsiveMenu from "./ResponsiveMenu";
 const Navbar = ({location,getLocation,setOpenDropdown,openDropdown}) => {
 const [openNav,setOpenNav] = useState(false)
  const {cartItem } = useCart()
