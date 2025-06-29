@@ -50,7 +50,7 @@ const updatedQuantity = (cartItems, productId, action)=>{
 )
 }
 const deleteItem = (productId)=>{
-  setCartItem(cartItem.filter(item =>item.id !== productId))
+  setCartItem(cartItems.filter(item =>item.id !== productId))
   toast.success("Product is removed from cart")
 }
   return (
