@@ -15,7 +15,7 @@ import{ HiMenuAlt1,HiMenuAlt3} from 'react-icons/hi'
 import ResponsiveMenu from "./ResponsiveMenu";
 const Navbar = ({location,getLocation,setOpenDropdown,openDropdown}) => {
 const [openNav,setOpenNav] = useState(false)
- const {cartItem } = useCart()
+ const {cartItems } = useCart()
   const toggleDropdown =()=>{
     setOpenDropdown(!openDropdown)
   }
@@ -104,7 +104,7 @@ const [openNav,setOpenNav] = useState(false)
           <Link to={"/cart"} className="relative top-3">
             <IoCartOutline className="h-7 w-7" />
             <span className="bg-red-500 px-2 rounded-full absolute -top-4 -right-1 text-white">
-              {cartItem.length}
+              {cartItems.length}
             </span>
           </Link>
           <div className="hidden md:block">

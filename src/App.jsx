@@ -13,6 +13,7 @@ import Footer from './components/Footer.jsx'
 import SingleProduct from './pages/SingleProduct.jsx'
 import Category from './components/Category.jsx'
 import { useCart } from './context/cartContext.jsx'
+import ErrorBoundary from './context/ErrorBoundary.jsx'
 
 
 const App = () => {
@@ -58,7 +59,7 @@ const response = await axios.get(url);
     <Route path='/products/:id' element={<SingleProduct/>}></Route>
     <Route path='/about' element={<About/>}></Route>
     <Route path='/contact' element={<Contact/>}></Route>
-    <Route path='/cart' element={<Cart location= {location} getLocation ={getLocation} />}></Route>
+    <Route path='/cart' element={ <ErrorBoundary><Cart location= {location} getLocation ={getLocation} /></ErrorBoundary>}></Route>
    </Routes>
    <Footer/>
    </BrowserRouter>

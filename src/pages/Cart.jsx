@@ -1,5 +1,5 @@
 import React from 'react'
-import { useCart } from '../context/cartContext'
+import { CartProvider, useCart } from '../context/cartContext'
 import { FaRegTrashAlt } from 'react-icons/fa';
 import { LuNotebookText } from 'react-icons/lu';
 import { MdDeliveryDining } from 'react-icons/md';
@@ -8,18 +8,21 @@ import {useUser} from'@clerk/clerk-react';
 import { useNavigate } from 'react-router-dom';
 import emptyCart from '../assets/vecteezy_empty-state-empty-cart-illustration_47468658.jpg'
 const Cart = ( {location,getLocation}) => {
-  const {cartItem, updatedQuantity, deleteItem} = useCart()
+  const {cartItems, updatedQuantity, deleteItem} = useCart();
+  if(!Array.isArray(cartItems)){
+    return <div className='text-center mt-10 text-lg'> Loading cart...</div>
+  }
   const navigate = useNavigate()
-  const totalPrice = cartItem.reduce((total,item)=> total+(item.price*item.quantity),0)
+  const totalPrice = Array.isArray(cartItems) ? cartItems.reduce((total,item)=> total+(item.price*item.quantity),0):0;
   const {user} = useUser()
   return (
     <div className='mt-30 max-w-6xl mx-auto mb-5 px-4 md:px-0'>
      {
-      cartItem.length >0 ? <div> 
-        <h1 className='font-bold text-2xl'>My Cart  ({cartItem.length})</h1>
+      cartItems.length >0 ? <div> 
+        <h1 className='font-bold text-2xl'>My Cart  ({cartItems.length})</h1>
         <div>
           <div className='mt-10'>
-            {cartItem.map ((item,index) =>{
+            {cartItems.map ((item,index) =>{
               return <div key ={index} className='bg-gray-100 rounded-md flex items-center justify-between mt-3 w-full'>
                 <div className='flex items-center md:gap-4 gap-0'>
                   <img src={item.image} alt={item.title} className='w-20 h-20 object-cover border-2 border-none rounded-full mx-auto' />
@@ -29,9 +32,9 @@ const Cart = ( {location,getLocation}) => {
                   </div>
                 </div>
                 <div className='bg-red-500 text-white flex flex-gap-4 p-2 rounded-md font-semibold md:font-bold text-xl'>
-                  <button className='cursor-ponter ' onClick={()=>updatedQuantity(cartItem, item.id,"decrease")}>-</button>
+                  <button className='cursor-ponter ' onClick={()=>updatedQuantity(cartItems, item.id,"decrease")}>-</button>
                   <span>  {item.quantity}  </span>
-                  <button className='cursor-pointer' onClick={()=>updatedQuantity(cartItem, item.id,"increase")}>+</button>
+                  <button className='cursor-pointer' onClick={()=>updatedQuantity(cartItems, item.id,"increase")}>+</button>
                 </div>
                 <span  onClick={()=>deleteItem(item.id)} className='hover:bg-white/60 transition-all rounded-full p-3 hover:shadow-2xl '>
                   <FaRegTrashAlt/>

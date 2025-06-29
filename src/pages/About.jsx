@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div className="min-h-screen bg-gray-100 py-10 px-4 sm:px-6 lg:px-20">
-      <div className="max-w-5xl mx-auto bg-[#FDF2F8] rounded-2xl shadow-lg p-8 space-y-8">
+      <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg p-8 space-y-8">
         <h1 className="text-4xl font-bold  text-center">About Dhaage</h1>
 
         <p className="text-gray-700 text-lg">

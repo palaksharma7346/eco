@@ -5,34 +5,34 @@ const CartContext = createContext()
 
 
 export const CartProvider = ({ children }) => {
-  const [cartItem, setCartItem] = useState(() => {
+  const [cartItems, setCartItem] = useState(() => {
     // 👇 Load cart from localStorage on first render
-    const stored = localStorage.getItem('cartItem');
+    const stored = localStorage.getItem('cartItems');
     return stored ? JSON.parse(stored) : [];
   });
 
   // 👇 Save cart to localStorage on any update
   useEffect(() => {
-    localStorage.setItem('cartItem', JSON.stringify(cartItem));
-  }, [cartItem]);
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
   const addToCart = (product) => {
-    const itemInCart = cartItem.find((item)=> item.id == product.id)
+    const itemInCart = cartItems.find((item)=> item.id == product.id)
     if(itemInCart){
-      const updatedCart = cartItem.map((item)=>
+      const updatedCart = cartItems.map((item)=>
       item.id === product.id ? {...item,quantity :item.quantity +1}:item
       );
       setCartItem(updatedCart)
       toast.success("Product Quantity Increased")
     }
     else{
-      setCartItem([...cartItem, {...product, quantity :1}])
+      setCartItem([...cartItems, {...product, quantity :1}])
       toast.success("Product is added to cart")
     }
    
   }
-const updatedQuantity = (cartItem, productId, action)=>{
+const updatedQuantity = (cartItems, productId, action)=>{
   setCartItem(
-    cartItem.map(item => {
+    cartItems.map(item => {
     if(item.id === productId){
       let newUnit = item.quantity
       if(action === "increase"){
@@ -54,7 +54,7 @@ const deleteItem = (productId)=>{
   toast.success("Product is removed from cart")
 }
   return (
-    <CartContext.Provider value={{ cartItem, addToCart,setCartItem,updatedQuantity,deleteItem }}>
+    <CartContext.Provider value={{ cartItems, addToCart,setCartItem,updatedQuantity,deleteItem }}>
       {children}
     </CartContext.Provider>
   )
