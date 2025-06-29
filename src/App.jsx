@@ -7,11 +7,8 @@ import Contact from './pages/Contact'
 import Cart from './pages/Cart'
 import Navbar from './components/Navbar'
 import axios from 'axios'
-import {DataProvider} from './context/DataContext'
-import Carousel from './components/Carousel.jsx'
 import Footer from './components/Footer.jsx'
 import SingleProduct from './pages/SingleProduct.jsx'
-import Category from './components/Category.jsx'
 import { useCart } from './context/cartContext.jsx'
 
 
